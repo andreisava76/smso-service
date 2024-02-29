@@ -1,7 +1,7 @@
 {
     "name": "laravel-notification-channels/smso",
     "description": "SMSO Notifications Channel for Laravel",
-    "homepage": "https://https://github.com/andreisava76/smso-service",
+    "homepage": "https://github.com/andreisava76/smso-service",
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
