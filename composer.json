@@ -2,10 +2,11 @@
     "name": "laravel-notification-channels/smso",
     "description": "SMSO Notifications Channel for Laravel",
     "homepage": "https://https://github.com/andreisava76/smso-service",
+    "license": "MIT",
     "require": {
-        "php": ">=7.2",
-        "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
-        "illuminate/support": "~6.0 || ~7.0 || ~8.0"
+        "php": "^8.0.2",
+        "illuminate/notifications": "^8.0",
+        "illuminate/support": "^8.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
@@ -13,12 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "NotificationChannels\\:channel_namespace\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "NotificationChannels\\:channel_namespace\\Test\\": "tests"
+            "NotificationChannels\\smso\\": "src"
         }
     },
     "scripts": {
