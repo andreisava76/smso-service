@@ -2,7 +2,7 @@
 
 namespace NotificationChannels\Smso;
 
-class SMSOMessage
+class SmsoMessage
 {
     protected $payload = [];
 
