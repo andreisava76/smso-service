@@ -1,5 +1,5 @@
 {
-    "name": "laravel-notification-channels/smso",
+    "name": "andrei76/smso-service",
     "description": "SMSO Notifications Channel for Laravel",
     "homepage": "https://github.com/andreisava76/simple-crud-with-auth",
     "license": "MIT",
