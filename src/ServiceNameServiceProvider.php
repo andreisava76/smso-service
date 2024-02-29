@@ -1,34 +1,27 @@
 <?php
 
-namespace NotificationChannels\:channel_namespace;
+namespace NotificationChannels\Smso;
 
+use GuzzleHttp\Client as HttpClient;
 use Illuminate\Support\ServiceProvider;
 
-class :service_nameServiceProvider extends ServiceProvider
+class SmsoServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
     public function boot()
     {
-        // Bootstrap code here.
-
-        /**
-         * Here's some example code we use for the pusher package.
-
-        $this->app->when(Channel::class)
-            ->needs(Pusher::class)
+        $this->app->when(SmsoChannel::class)
+            ->needs(Smso::class)
             ->give(function () {
-                $pusherConfig = config('broadcasting.connections.pusher');
+                $apiKey = config('services.smso.api_key');
 
-                return new Pusher(
-                    $pusherConfig['key'],
-                    $pusherConfig['secret'],
-                    $pusherConfig['app_id']
+                return new Smso(
+                    $apiKey,
+                    new HttpClient()
                 );
             });
-         */
-
     }
 
     /**

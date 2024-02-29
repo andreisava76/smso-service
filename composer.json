@@ -1,16 +1,7 @@
 {
-    "name": "laravel-notification-channels/:package_name",
-    "description": ":package_description",
-    "homepage": "https://github.com/laravel-notification-channels/:package_name",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
-            "role": "Developer"
-        }
-    ],
+    "name": "laravel-notification-channels/smso",
+    "description": "SMSO Notifications Channel for Laravel",
+    "homepage": "https://https://github.com/andreisava76/smso-service",
     "require": {
         "php": ">=7.2",
         "illuminate/notifications": "~6.0 || ~7.0 || ~8.0",
