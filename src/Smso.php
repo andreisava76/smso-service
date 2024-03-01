@@ -5,14 +5,16 @@ namespace NotificationChannels\Smso;
 use Exception;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHTtp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use NotificationChannels\Smso\Exceptions\CouldNotSendNotification;
+use Psr\Http\Message\ResponseInterface;
 
 class Smso
 {
     /**
      * @var string Smso API URL.
      */
-    protected $apiUrl = 'https://app.smso.ro/api/v1/';
+    protected $apiUrl = 'https://app.smso.ro/api/v1/send';
 
     /**
      * @var HttpClient HTTP Client.
@@ -70,32 +72,25 @@ class Smso
      * <code>
      * $params = [
      *      'to'                    => '',
-     *      'text'                  => '',
-     *      'from'                  => '',
-     *      'debug'                 => '',
-     *      'delay'                 => '',
-     *      'no_reload'             => '',
-     *      'unicode'               => '',
-     *      'flash'                 => '',
-     *      'udh'                   => '',
-     *      'utf8'                  => '',
-     *      'ttl'                   => '',
-     *      'details'               => '',
-     *      'return_msg_id'         => '',
-     *      'label'                 => '',
-     *      'json'                  => '',
-     *      'performance_tracking'  => ''
+     *      'body'                  => '',
+     *      'sender'                  => '',
      * ];
      * </code>
      *
      *
-     * @param  array  $params
+     * @param array $params
+     * @return ResponseInterface
+     * @throws CouldNotSendNotification
      */
     public function sendMessage(array $params)
     {
         return $this->sendRequest('sms', $params);
     }
 
+    /**
+     * @throws GuzzleException
+     * @throws CouldNotSendNotification
+     */
     public function sendRequest(string $endpoint, array $params)
     {
         if (empty($this->apiKey)) {
@@ -103,9 +98,9 @@ class Smso
         }
 
         try {
-            return $this->httpClient()->post($this->apiUrl.$endpoint, [
+            return $this->httpClient()->post($this->apiUrl, [
                 'headers' => [
-                    'Authorization' => 'basic '.$this->apiKey,
+                    'X-Authorization' => $this->apiKey,
                 ],
                 'form_params' => $params,
             ]);

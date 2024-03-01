@@ -29,7 +29,7 @@ class SmsoChannel
         }
 
         if (!$message->hasToNumber()) {
-            if (!$to = $notifiable->phone_number) {
+            if (!$to = $notifiable->mobile_number) {
                 $to = $notifiable->routeNotificationFor('sms');
             }
 
