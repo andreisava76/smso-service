@@ -1,7 +1,7 @@
 {
-    "name": "andrei76/smso-service",
-    "description": "SMSO Notifications Channel for Laravel",
-    "homepage": "https://github.com/andreisava76/simple-crud-with-auth",
+    "name": "andrei76/atw/otp",
+    "description": "Atw Notifications Channel for Laravel",
+    "homepage": "https://github.com/andreisava76/atw-otp",
     "license": "MIT",
     "require": {
         "php": ">=7.2",
@@ -16,11 +16,6 @@
     "autoload": {
         "psr-4": {
             "NotificationChannels\\Smso\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "NotificationChannels\\Smso\\Test\\": "tests"
         }
     },
     "scripts": {
