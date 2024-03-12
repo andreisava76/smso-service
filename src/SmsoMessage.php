@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Smso;
+namespace NotificationChannel;
 
 class SmsoMessage
 {
@@ -29,7 +29,8 @@ class SmsoMessage
     /**
      * Return new SMSOMessage object.
      *
-     * @param  string  $message
+     * @param string $message
+     * @return SmsoMessage
      */
     public static function create(string $message = ''): self
     {
@@ -59,7 +60,8 @@ class SmsoMessage
     /**
      * Set message content.
      *
-     * @param  string  $message
+     * @param string $message
+     * @return SmsoMessage
      */
     public function content(string $message): self
     {
@@ -71,7 +73,8 @@ class SmsoMessage
     /**
      * Set recipient phone number.
      *
-     * @param  string  $to
+     * @param string $to
+     * @return SmsoMessage
      */
     public function to(string $to): self
     {
@@ -83,7 +86,8 @@ class SmsoMessage
     /**
      * Set sender name.
      *
-     * @param  string  $from
+     * @param string $from
+     * @return SmsoMessage
      */
     public function from(string $from): self
     {

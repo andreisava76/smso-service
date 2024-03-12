@@ -1,8 +1,8 @@
 <?php
 
-namespace NotificationChannels\Smso;
+namespace NotificationChannel;
 
-use NotificationChannels\Smso\Exceptions\CouldNotSendNotification;
+use NotificationChannel\Exceptions\CouldNotSendNotification;
 use Illuminate\Notifications\Notification;
 
 class SmsoChannel
@@ -16,9 +16,10 @@ class SmsoChannel
      * Send the given notification.
      *
      * @param mixed $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param Notification $notification
      *
-     * @throws \NotificationChannels\Smso\Exceptions\CouldNotSendNotification
+     * @return mixed|void
+     * @throws CouldNotSendNotification
      */
     public function send($notifiable, Notification $notification)
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace NotificationChannels\Smso;
+namespace NotificationChannel;
 
 use Exception;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHTtp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
-use NotificationChannels\Smso\Exceptions\CouldNotSendNotification;
+use NotificationChannel\Exceptions\CouldNotSendNotification;
 use Psr\Http\Message\ResponseInterface;
 
 class Smso

@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Smso;
+namespace NotificationChannel;
 
 use GuzzleHttp\Client as HttpClient;
 use Illuminate\Support\ServiceProvider;

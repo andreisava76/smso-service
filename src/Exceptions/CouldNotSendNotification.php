@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationChannels\Smso\Exceptions;
+namespace NotificationChannel\Exceptions;
 
 class CouldNotSendNotification extends \Exception
 {
